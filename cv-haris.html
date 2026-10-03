@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Haris Abdul Ajis — CV</title>
+<meta name="description" content="CV Haris Abdul Ajis, siswa TKJ SMKN 1 Rancaekek.">
+<meta name="theme-color" content="#2f6f5e">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232f6f5e'/%3E%3Ctext x='32' y='43' font-size='30' text-anchor='middle' fill='white' font-family='Georgia,serif'%3EH%3C/text%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#f7f5f0; --surface:#ffffff; --surface-2:#efece5; --ink:#1d2421; --muted:#5f6b66;
+  --line:#dedad0; --accent:#2f6f5e; --accent-ink:#ffffff; --accent-soft:#dcebe5;
+  --shadow:0 1px 2px rgba(20,30,25,.05),0 8px 24px rgba(20,30,25,.06);
+  --radius:14px; --maxw:1080px;
+  --serif:Georgia,"Times New Roman",serif;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+:root[data-theme="dark"]{
+  --bg:#121715; --surface:#1a211e; --surface-2:#222b27; --ink:#e9eeeb; --muted:#9aa8a1;
+  --line:#2c3732; --accent:#6fbfa5; --accent-ink:#0f1a16; --accent-soft:#1f322b;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 28px rgba(0,0,0,.28);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.65;font-size:16px;
+  transition:background .3s,color .3s;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+button,input,textarea,select{font:inherit;color:inherit}
+button{cursor:pointer}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+
+/* progress */
+#progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--accent);z-index:100;transition:width .1s}
+
+/* header */
+header.top{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 88%,transparent);
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid transparent;transition:border-color .3s}
+header.top.scrolled{border-bottom-color:var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.brand{font-family:var(--serif);font-size:1.15rem;font-weight:700;letter-spacing:.2px}
+.brand span{color:var(--accent)}
+.menu{display:flex;gap:4px;align-items:center}
+.menu a{padding:7px 12px;border-radius:999px;font-size:.92rem;color:var(--muted);transition:.2s}
+.menu a:hover{color:var(--ink);background:var(--surface-2)}
+.menu a.active{color:var(--accent);background:var(--accent-soft)}
+.tools{display:flex;gap:8px;align-items:center}
+.icon-btn{height:36px;min-width:36px;padding:0 10px;border-radius:10px;border:1px solid var(--line);
+  background:var(--surface);display:inline-flex;align-items:center;justify-content:center;gap:6px;
+  font-size:.82rem;font-weight:600;transition:.2s}
+.icon-btn:hover{border-color:var(--accent);color:var(--accent)}
+.burger{display:none}
+@media(max-width:860px){
+  .burger{display:inline-flex}
+  .menu{position:absolute;top:64px;left:0;right:0;flex-direction:column;align-items:stretch;
+    background:var(--bg);border-bottom:1px solid var(--line);padding:10px 22px 16px;
+    transform:translateY(-8px);opacity:0;pointer-events:none;transition:.2s}
+  .menu.open{transform:none;opacity:1;pointer-events:auto}
+  .menu a{padding:11px 12px}
+}
+
+/* hero */
+.hero{padding:64px 0 40px}
+.hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:48px;align-items:center}
+@media(max-width:860px){.hero-grid{grid-template-columns:1fr;gap:32px}.photo-box{order:-1}}
+.eyebrow{font-family:var(--mono);font-size:.82rem;color:var(--accent);letter-spacing:.04em;margin-bottom:14px}
+h1{font-family:var(--serif);font-size:clamp(2.2rem,5.5vw,3.5rem);line-height:1.1;font-weight:700;letter-spacing:-.01em}
+.role{margin-top:14px;font-size:1.2rem;color:var(--muted);min-height:1.9em}
+.role b{color:var(--ink);font-weight:600}
+.caret{display:inline-block;width:2px;height:1.1em;background:var(--accent);vertical-align:-3px;margin-left:2px;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.lead{margin-top:18px;max-width:54ch;color:var(--muted)}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border-radius:11px;font-weight:600;font-size:.94rem;
+  border:1px solid var(--line);background:var(--surface);transition:.2s}
+.btn:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-1px)}
+.btn.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.btn.primary:hover{filter:brightness(1.08);color:var(--accent-ink)}
+.meta{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:26px;font-size:.9rem;color:var(--muted)}
+.meta span{display:inline-flex;gap:7px;align-items:center}
+
+.photo-box{justify-self:center;text-align:center}
+.photo{width:min(280px,70vw);aspect-ratio:1;border-radius:50%;border:1px solid var(--line);position:relative;overflow:hidden;
+  background:var(--surface-2);display:grid;place-items:center;box-shadow:var(--shadow);cursor:pointer;transition:.3s}
+.photo:hover{border-color:var(--accent)}
+.photo img{width:100%;height:100%;object-fit:cover}
+.photo .ph{font-family:var(--serif);font-size:4.2rem;color:var(--accent)}
+.photo .hint{position:absolute;inset:auto 0 0 0;padding:10px;font-size:.75rem;background:linear-gradient(transparent,rgba(0,0,0,.55));
+  color:#fff;opacity:0;transition:.25s}
+.photo:hover .hint,.photo:focus-visible .hint{opacity:1}
+.photo-actions{margin-top:12px;font-size:.8rem;color:var(--muted)}
+.photo-actions button{background:none;border:none;color:var(--muted);text-decoration:underline;font-size:.8rem}
+.photo-actions button:hover{color:var(--accent)}
+
+/* sections */
+section{padding:64px 0}
+.sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:30px}
+.sec-head .no{font-family:var(--mono);color:var(--accent);font-size:.85rem}
+h2{font-family:var(--serif);font-size:clamp(1.6rem,3.4vw,2.1rem);font-weight:700}
+.sec-head::after{content:"";flex:1;height:1px;background:var(--line);margin-left:6px;transform:translateY(-4px)}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}
+
+/* about */
+.about-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:28px}
+@media(max-width:860px){.about-grid{grid-template-columns:1fr}}
+.about-grid p+p{margin-top:14px}
+.about-grid p{color:var(--muted)}
+.facts{list-style:none;display:grid;gap:12px}
+.facts li{display:flex;justify-content:space-between;gap:14px;font-size:.93rem;padding-bottom:12px;border-bottom:1px dashed var(--line)}
+.facts li:last-child{border:none;padding:0}
+.facts span:first-child{color:var(--muted)}
+.facts span:last-child{font-weight:600;text-align:right}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:24px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px;text-align:center}
+.stat b{display:block;font-family:var(--serif);font-size:1.9rem;color:var(--accent);line-height:1.1}
+.stat small{color:var(--muted);font-size:.8rem}
+
+/* tabs */
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.tab{padding:7px 15px;border-radius:999px;border:1px solid var(--line);background:var(--surface);font-size:.88rem;color:var(--muted);transition:.2s}
+.tab:hover{color:var(--ink)}
+.tab.on{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(2,1fr);gap:18px 36px}
+@media(max-width:760px){.skills{grid-template-columns:1fr}}
+.skill.hide{display:none}
+.skill .row{display:flex;justify-content:space-between;font-size:.93rem;margin-bottom:7px}
+.skill .row span:last-child{font-family:var(--mono);color:var(--muted);font-size:.82rem}
+.bar{height:7px;border-radius:99px;background:var(--surface-2);overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--accent);border-radius:99px;transition:width 1.1s cubic-bezier(.2,.7,.2,1)}
+.note{margin-top:20px;font-size:.84rem;color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.chip{padding:5px 12px;border-radius:8px;background:var(--surface-2);font-size:.82rem;font-family:var(--mono);color:var(--muted)}
+
+/* projects */
+.toolbar{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center;margin-bottom:22px}
+.search{flex:1;min-width:200px;max-width:320px;padding:9px 14px;border-radius:10px;border:1px solid var(--line);background:var(--surface)}
+.search:focus{outline:none;border-color:var(--accent)}
+.projects{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:18px}
+.proj{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px;display:flex;flex-direction:column;gap:10px;
+  transition:.25s;cursor:pointer;text-align:left}
+.proj:hover{transform:translateY(-3px);border-color:var(--accent);box-shadow:var(--shadow)}
+.proj h3{font-family:var(--serif);font-size:1.15rem}
+.proj p{color:var(--muted);font-size:.92rem;flex:1}
+.proj .tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{font-size:.74rem;font-family:var(--mono);color:var(--accent);background:var(--accent-soft);padding:2px 9px;border-radius:6px}
+.proj .cat{font-size:.74rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.empty{grid-column:1/-1;text-align:center;color:var(--muted);padding:30px}
+
+/* timeline */
+.timeline{position:relative;padding-left:26px}
+.timeline::before{content:"";position:absolute;left:5px;top:6px;bottom:6px;width:1px;background:var(--line)}
+.t-item{position:relative;padding-bottom:26px}
+.t-item:last-child{padding-bottom:0}
+.t-item::before{content:"";position:absolute;left:-26px;top:7px;width:11px;height:11px;border-radius:50%;background:var(--bg);border:2px solid var(--accent)}
+.t-item time{font-family:var(--mono);font-size:.8rem;color:var(--accent)}
+.t-item h3{font-size:1.05rem;margin:2px 0 4px}
+.t-item p{color:var(--muted);font-size:.93rem;max-width:68ch}
+
+/* interests */
+.interest-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.interest{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px}
+.interest h3{font-family:var(--serif);font-size:1.05rem;margin-bottom:6px}
+.interest p{color:var(--muted);font-size:.9rem}
+
+/* contact */
+.contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:28px}
+@media(max-width:860px){.contact-grid{grid-template-columns:1fr}}
+.clist{display:grid;gap:12px;margin-top:6px}
+.crow{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 14px;border:1px solid var(--line);border-radius:11px;background:var(--surface)}
+.crow small{display:block;color:var(--muted);font-size:.76rem}
+.crow b{font-size:.92rem;font-weight:600;word-break:break-all}
+form{display:grid;gap:14px}
+.field label{display:block;font-size:.84rem;color:var(--muted);margin-bottom:5px}
+.field input,.field textarea{width:100%;padding:11px 13px;border-radius:10px;border:1px solid var(--line);background:var(--bg)}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--accent)}
+.field textarea{resize:vertical;min-height:120px}
+.field .err{color:#c0392b;font-size:.78rem;margin-top:4px;display:none}
+.field.bad input,.field.bad textarea{border-color:#c0392b}
+.field.bad .err{display:block}
+.counter{text-align:right;font-size:.75rem;color:var(--muted);margin-top:3px}
+.form-actions{display:flex;flex-wrap:wrap;gap:10px}
+
+/* footer + misc */
+footer{padding:34px 0 50px;border-top:1px solid var(--line);color:var(--muted);font-size:.86rem}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
+#toTop{position:fixed;right:20px;bottom:20px;width:42px;height:42px;border-radius:50%;border:1px solid var(--line);
+  background:var(--surface);box-shadow:var(--shadow);opacity:0;pointer-events:none;transition:.25s;z-index:40}
+#toTop.show{opacity:1;pointer-events:auto}
+#toTop:hover{border-color:var(--accent);color:var(--accent)}
+#toast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,20px);background:var(--ink);color:var(--bg);padding:10px 18px;border-radius:10px;
+  font-size:.88rem;opacity:0;pointer-events:none;transition:.3s;z-index:200}
+#toast.show{opacity:1;transform:translate(-50%,0)}
+
+/* modal */
+.modal{position:fixed;inset:0;background:rgba(10,15,12,.55);display:none;align-items:center;justify-content:center;padding:20px;z-index:150}
+.modal.open{display:flex}
+.modal-box{background:var(--surface);border:1px solid var(--line);border-radius:16px;max-width:520px;width:100%;padding:28px;position:relative;animation:pop .22s ease}
+@keyframes pop{from{transform:scale(.96);opacity:0}to{transform:none;opacity:1}}
+.modal-box h3{font-family:var(--serif);font-size:1.4rem;margin:6px 0 10px}
+.modal-box p{color:var(--muted)}
+.modal-box ul{margin:14px 0 0 18px;color:var(--muted);font-size:.93rem}
+.modal-box .x{position:absolute;top:12px;right:12px}
+.kbd{font-family:var(--mono);font-size:.78rem;border:1px solid var(--line);border-bottom-width:2px;border-radius:6px;padding:1px 7px;background:var(--surface-2)}
+.keys{display:grid;gap:10px;margin-top:14px;font-size:.92rem}
+.keys div{display:flex;justify-content:space-between;color:var(--muted)}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}.rv{opacity:1;transform:none}}
+
+/* print */
+@media print{
+  :root,:root[data-theme="dark"]{--bg:#fff;--surface:#fff;--surface-2:#f2f2f2;--ink:#111;--muted:#444;--line:#ccc;--accent:#1f5a4a;--accent-soft:#e8f1ee;--shadow:none}
+  header.top,#progress,#toTop,#toast,.cta,.toolbar,.tabs,#contact,.photo-actions,.burger,footer .noprint{display:none!important}
+  body{font-size:11.5pt}
+  section{padding:18px 0;break-inside:avoid}
+  .rv{opacity:1!important;transform:none!important}
+  .bar i{width:var(--w)!important}
+  .skill.hide,.proj{display:flex!important}
+  .hero{padding-top:0}
+  .card,.proj,.interest,.stat{box-shadow:none}
+}
+</style>
+</head>
+<body>
+<div id="progress"></div>
+
+<header class="top" id="top">
+  <div class="wrap nav">
+    <a href="#home" class="brand">Haris<span>.</span></a>
+    <nav class="menu" id="menu" aria-label="Navigasi utama">
+      <a href="#home" data-i18n="nav_home">Beranda</a>
+      <a href="#about" data-i18n="nav_about">Tentang</a>
+      <a href="#skills" data-i18n="nav_skills">Keahlian</a>
+      <a href="#projects" data-i18n="nav_projects">Proyek</a>
+      <a href="#journey" data-i18n="nav_journey">Perjalanan</a>
+      <a href="#contact" data-i18n="nav_contact">Kontak</a>
+    </nav>
+    <div class="tools">
+      <button class="icon-btn" id="langBtn" title="Bahasa (L)" aria-label="Ganti bahasa">ID</button>
+      <button class="icon-btn" id="themeBtn" title="Tema (T)" aria-label="Ganti tema">◐</button>
+      <button class="icon-btn burger" id="burger" aria-label="Menu" aria-expanded="false">☰</button>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow" data-i18n="hero_eyebrow">// halo, saya</p>
+      <h1>Haris Abdul Ajis</h1>
+      <p class="role"><span data-i18n="hero_iam">Saya seorang</span> <b id="typed"></b><span class="caret"></span></p>
+      <p class="lead" data-i18n="hero_lead">Siswa Teknik Komputer dan Jaringan yang suka membangun sesuatu dari nol — mulai dari konfigurasi sistem Linux, pemrograman plugin, sampai video sinematik dari udara.</p>
+      <div class="cta">
+        <a class="btn primary" href="#contact" data-i18n="btn_contact">Hubungi saya</a>
+        <a class="btn" href="#projects" data-i18n="btn_projects">Lihat proyek</a>
+        <button class="btn" id="printBtn" data-i18n="btn_pdf">Simpan PDF</button>
+        <button class="btn" id="vcardBtn" data-i18n="btn_vcard">Simpan kontak</button>
+      </div>
+      <div class="meta">
+        <span>🎓 TKJ · SMKN 1 Rancaekek</span>
+        <span>📍 Rancaekek, Jawa Barat</span>
+      </div>
+    </div>
+    <div class="photo-box">
+      <div class="photo" id="photo" tabindex="0" role="button" aria-label="Unggah foto">
+        <span class="ph" id="photoPh">HA</span>
+        <img id="photoImg" alt="Foto Haris" hidden>
+        <span class="hint" data-i18n="photo_hint">Klik untuk ganti foto</span>
+      </div>
+      <input type="file" id="photoInput" accept="image/*" hidden>
+      <p class="photo-actions"><span data-i18n="photo_note">Foto hanya tersimpan di browser ini.</span> <button id="photoRemove" hidden data-i18n="photo_remove">Hapus</button></p>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="no">01</span><h2 data-i18n="about_title">Tentang saya</h2></div>
+    <div class="about-grid">
+      <div class="rv">
+        <p data-i18n="about_p1">Saya Haris Abdul Ajis, biasa dipanggil Ais. Saat ini saya menempuh pendidikan di jurusan Teknik Komputer dan Jaringan (TKJ) SMKN 1 Rancaekek.</p>
+        <p data-i18n="about_p2">Di luar kelas, saya mengerjakan proyek sendiri: menulis plugin untuk server Minecraft, mengutak-atik Linux dan Docker, serta membuat video sinematik dengan drone. Saya lebih nyaman bekerja tenang dan fokus, dan terbiasa menyelesaikan masalah dengan mencoba, membaca log, lalu memperbaikinya.</p>
+        <div class="stats">
+          <div class="stat"><b data-count="6">0</b><small data-i18n="stat_projects">Proyek</small></div>
+          <div class="stat"><b data-count="8">0</b><small data-i18n="stat_skills">Keahlian</small></div>
+          <div class="stat"><b data-count="3">0</b><small data-i18n="stat_fields">Bidang</small></div>
+        </div>
+      </div>
+      <div class="card rv">
+        <ul class="facts">
+          <li><span data-i18n="f_name">Nama</span><span>Haris Abdul Ajis</span></li>
+          <li><span data-i18n="f_nick">Panggilan</span><span>Ais</span></li>
+          <li><span data-i18n="f_school">Sekolah</span><span>SMKN 1 Rancaekek</span></li>
+          <li><span data-i18n="f_major">Jurusan</span><span>TKJ</span></li>
+          <li><span data-i18n="f_loc">Domisili</span><span>Jawa Barat</span></li>
+          <li><span data-i18n="f_time">Waktu setempat</span><span id="clock">—</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="no">02</span><h2 data-i18n="skills_title">Keahlian</h2></div>
+    <div class="tabs rv" id="skillTabs"></div>
+    <div class="skills rv" id="skillList"></div>
+    <p class="note rv" data-i18n="skills_note">Persentase adalah perkiraan tingkat kenyamanan saya saat ini, bukan sertifikasi.</p>
+    <div class="chips rv" id="chips"></div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="no">03</span><h2 data-i18n="proj_title">Proyek</h2></div>
+    <div class="toolbar rv">
+      <div class="tabs" id="projTabs" style="margin:0"></div>
+      <input class="search" id="projSearch" type="search" data-i18n-ph="proj_search" placeholder="Cari proyek…" aria-label="Cari proyek">
+    </div>
+    <div class="projects" id="projList"></div>
+  </div>
+</section>
+
+<!-- JOURNEY -->
+<section id="journey">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="no">04</span><h2 data-i18n="journey_title">Perjalanan</h2></div>
+    <div class="timeline rv" id="timeline"></div>
+
+    <div class="sec-head rv" style="margin-top:56px"><span class="no">05</span><h2 data-i18n="int_title">Minat &amp; kreativitas</h2></div>
+    <div class="interest-grid rv" id="interests"></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="no">06</span><h2 data-i18n="contact_title">Kontak</h2></div>
+    <div class="contact-grid">
+      <div class="rv">
+        <p style="color:var(--muted)" data-i18n="contact_lead">Terbuka untuk magang (PKL), kolaborasi proyek, atau sekadar diskusi teknis. Pesan lewat formulir akan dikirim lewat WhatsApp atau email.</p>
+        <div class="clist" style="margin-top:18px">
+          <div class="crow"><div><small>Email</small><b id="emailTxt"></b></div><button class="icon-btn" data-copy="email" data-i18n="copy">Salin</button></div>
+          <div class="crow"><div><small>WhatsApp</small><b id="waTxt"></b></div><button class="icon-btn" data-copy="wa" data-i18n="copy">Salin</button></div>
+          <div class="crow"><div><small>GitHub</small><b id="ghTxt"></b></div><a class="icon-btn" id="ghLink" target="_blank" rel="noopener" data-i18n="open">Buka</a></div>
+        </div>
+      </div>
+      <form class="card rv" id="form" novalidate>
+        <div class="field"><label for="fName" data-i18n="form_name">Nama</label><input id="fName" autocomplete="name"><div class="err" data-i18n="err_name">Nama wajib diisi.</div></div>
+        <div class="field"><label for="fMail" data-i18n="form_mail">Email Anda</label><input id="fMail" type="email" autocomplete="email"><div class="err" data-i18n="err_mail">Email belum valid.</div></div>
+        <div class="field"><label for="fMsg" data-i18n="form_msg">Pesan</label><textarea id="fMsg" maxlength="500"></textarea><div class="counter"><span id="cnt">0</span>/500</div><div class="err" data-i18n="err_msg">Pesan minimal 10 karakter.</div></div>
+        <div class="form-actions">
+          <button type="submit" class="btn primary" data-act="wa" data-i18n="send_wa">Kirim via WhatsApp</button>
+          <button type="button" class="btn" id="mailBtn" data-i18n="send_mail">Kirim via email</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="year"></span> Haris Abdul Ajis</span>
+    <span class="noprint"><button class="icon-btn" id="helpBtn" style="height:30px">?</button> <span data-i18n="foot_keys">pintasan keyboard</span></span>
+  </div>
+</footer>
+
+<button id="toTop" aria-label="Kembali ke atas">↑</button>
+<div id="toast" role="status" aria-live="polite"></div>
+
+<!-- modal proyek -->
+<div class="modal" id="projModal" aria-hidden="true">
+  <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="mTitle">
+    <button class="icon-btn x" data-close aria-label="Tutup">✕</button>
+    <span class="tag" id="mCat"></span>
+    <h3 id="mTitle"></h3>
+    <p id="mDesc"></p>
+    <ul id="mPoints"></ul>
+    <div class="tags" id="mTags" style="display:flex;flex-wrap:wrap;gap:6px;margin-top:16px"></div>
+  </div>
+</div>
+
+<!-- modal bantuan -->
+<div class="modal" id="helpModal" aria-hidden="true">
+  <div class="modal-box" role="dialog" aria-modal="true">
+    <button class="icon-btn x" data-close aria-label="Tutup">✕</button>
+    <h3 data-i18n="help_title">Pintasan keyboard</h3>
+    <div class="keys">
+      <div><span data-i18n="k_theme">Ganti tema</span><span class="kbd">T</span></div>
+      <div><span data-i18n="k_lang">Ganti bahasa</span><span class="kbd">L</span></div>
+      <div><span data-i18n="k_print">Cetak / simpan PDF</span><span class="kbd">P</span></div>
+      <div><span data-i18n="k_search">Cari proyek</span><span class="kbd">/</span></div>
+      <div><span data-i18n="k_close">Tutup jendela</span><span class="kbd">Esc</span></div>
+    </div>
+  </div>
+</div>
+
+<script>
+/* =====================================================
+   DATA — edit bagian ini saja untuk memperbarui CV
+   ===================================================== */
+const CV = {
+  name: "Haris Abdul Ajis",
+  email: "emailkamu@example.com",      // ganti
+  wa: "6281234567890",                  // format internasional tanpa +
+  github: "https://github.com/username",// ganti
+  roles: {
+    id: ["siswa TKJ", "pengembang plugin Minecraft", "penyuka Linux & Docker", "pembuat video drone"],
+    en: ["IT networking student", "Minecraft plugin developer", "Linux & Docker enthusiast", "drone video maker"]
+  },
+  skills: [
+    { n: "Linux & Ubuntu",           cat: "net",   v: 75 },
+    { n: "Docker",                   cat: "net",   v: 60 },
+    { n: { id: "Jaringan komputer", en: "Computer networking" }, cat: "net", v: 70 },
+    { n: { id: "Troubleshooting perangkat", en: "Device troubleshooting" }, cat: "net", v: 72 },
+    { n: "Java (plugin Minecraft)",  cat: "code",  v: 65 },
+    { n: "HTML & CSS",               cat: "code",  v: 60 },
+    { n: { id: "Editing video", en: "Video editing" }, cat: "media", v: 75 },
+    { n: { id: "Desain poster", en: "Poster design" }, cat: "media", v: 70 },
+    { n: { id: "Pilot drone & sinematografi", en: "Drone piloting & cinematography" }, cat: "media", v: 70 }
+  ],
+  chips: ["Ubuntu", "Docker", "GRUB", "Java", "MythicMobs", "Vault API", "Spigot/Paper", "HTML", "CSS", "JavaScript", "Video editing"],
+  projects: [
+    { t: "IE3", cat: "code", tags: ["Java", "Minecraft"],
+      d: { id: "Plugin server Minecraft yang saya tulis sendiri dari nol, terinspirasi versi IE1 dan IE2.", en: "A Minecraft server plugin I wrote from scratch, inspired by the earlier IE1 and IE2." },
+      p: { id: ["Dikembangkan tanpa template, struktur dirancang sendiri", "Dipakai untuk server Minecraft"], en: ["Built without a template; structure designed by myself", "Used on a Minecraft server"] } },
+    { t: "Slimefun4 · DonixCraft", cat: "code", tags: ["Java", "Vault", "Slimefun"],
+      d: { id: "Memodifikasi source Slimefun4 agar research addon non-core dibuka memakai uang (Vault), bukan XP.", en: "Modified the Slimefun4 source so non-core addon research unlocks with money (Vault) instead of XP." },
+      p: { id: ["Opsi membuka semua item sekaligus", "Tampilan research disesuaikan"], en: ["Option to unlock all items at once", "Research interface adjusted"] } },
+    { t: "SimpleSoul", cat: "code", tags: ["Java", "Plugin"],
+      d: { id: "Menambah fitur reward dengan rentang acak dan indikator action bar pada sistem Soul.", en: "Added a random-range reward feature and an action bar indicator to the Soul system." },
+      p: { id: ["Reward acak dengan batas min–maks", "Indikator action bar saat aksi berjalan"], en: ["Random rewards with min–max bounds", "Action bar indicator while an action runs"] } },
+    { t: "GCE · Genetic Chickengineering", cat: "code", tags: ["Java", "Plugin"],
+      d: { id: "Mengubah sistem ayam dari berbasis DNA menjadi sistem craft dan kawin ayam.", en: "Reworked the chicken system from DNA-based to a craft-and-breed system." },
+      p: { id: ["Sistem kawin ayam baru", "Resep craft ayam custom"], en: ["New chicken breeding system", "Custom chicken crafting recipes"] } },
+    { t: "Boss luar angkasa", cat: "code", tags: ["MythicMobs", "Minecraft"],
+      d: { id: "Merancang boss mob custom bertema luar angkasa (Cosmic Overlord) dengan MythicMobs.", en: "Designed a custom space-themed boss mob (Cosmic Overlord) using MythicMobs." },
+      p: { id: ["Skill dan fase boss", "Tema visual luar angkasa"], en: ["Boss skills and phases", "Space-themed visuals"] } },
+    { t: { id: "Instalasi ulang Linux", en: "Linux reinstall" }, cat: "net", tags: ["Linux", "GRUB", "USB"],
+      d: { id: "Memasang ulang Linux di PC yang BIOS-nya terkunci, dengan boot USB lewat command line GRUB.", en: "Reinstalled Linux on a PC with a locked BIOS by booting a USB drive from the GRUB command line." },
+      p: { id: ["Boot manual dari GRUB tanpa menu BIOS", "Persiapan USB bootable"], en: ["Manual boot from GRUB without the BIOS menu", "Bootable USB preparation"] } },
+    { t: { id: "Video sinematik drone", en: "Cinematic drone videos" }, cat: "media", tags: ["Drone", "Editing"],
+      d: { id: "Merekam pemandangan sawah dan kampung dari udara, lalu menyuntingnya menjadi video sinematik.", en: "Filming rice fields and the village from the air, then editing them into cinematic videos." },
+      p: { id: ["Pengambilan gambar dengan drone pribadi", "Color grading dan penyuntingan"], en: ["Shot with my own drone", "Color grading and editing"] } },
+    { t: { id: "Poster & desain visual", en: "Posters & visual design" }, cat: "media", tags: ["Design"],
+      d: { id: "Membuat poster dan materi visual, dari konsep sampai hasil akhir.", en: "Creating posters and visual materials, from concept to final result." },
+      p: { id: ["Tata letak dan tipografi", "Disesuaikan dengan kebutuhan acara/komunitas"], en: ["Layout and typography", "Tailored to the event or community"] } }
+  ],
+  timeline: [
+    { time: { id: "Saat ini", en: "Present" }, t: "SMKN 1 Rancaekek — TKJ",
+      d: { id: "Mempelajari jaringan komputer, administrasi sistem, dan perakitan serta perbaikan perangkat.", en: "Studying computer networking, system administration, and hardware assembly and repair." } },
+    { time: { id: "Proyek mandiri", en: "Self-driven" }, t: { id: "Pengembang plugin Minecraft", en: "Minecraft plugin developer" },
+      d: { id: "Membuat dan memodifikasi plugin (IE3, SimpleSoul, GCE, Slimefun4) untuk server Minecraft.", en: "Building and modifying plugins (IE3, SimpleSoul, GCE, Slimefun4) for a Minecraft server." } },
+    { time: { id: "Proyek mandiri", en: "Self-driven" }, t: { id: "Eksplorasi Linux & Docker", en: "Linux & Docker exploration" },
+      d: { id: "Memasang ulang Linux, mengatur boot, dan menjalankan layanan di Ubuntu/Docker.", en: "Reinstalling Linux, handling boot setup, and running services on Ubuntu/Docker." } },
+    { time: { id: "Hobi", en: "Hobby" }, t: { id: "Kreator video & poster", en: "Video & poster creator" },
+      d: { id: "Merekam dengan drone dan menyunting video sinematik, serta mendesain poster.", en: "Filming with a drone, editing cinematic videos, and designing posters." } }
+  ],
+  interests: [
+    { t: { id: "Drone & sinematografi", en: "Drone & cinematography" }, d: { id: "Mencari sudut pandang baru dari udara, terutama lanskap pedesaan dan sawah.", en: "Looking for new viewpoints from the air, especially countryside and rice-field landscapes." } },
+    { t: { id: "Desain & editing", en: "Design & editing" }, d: { id: "Menyusun visual yang bersih: poster, video, dan tampilan antarmuka.", en: "Putting together clean visuals: posters, video, and interfaces." } },
+    { t: { id: "Membangun sistem", en: "Building systems" }, d: { id: "Suka membongkar cara kerja sesuatu, lalu merakitnya kembali dengan versi sendiri.", en: "Enjoys taking apart how things work, then reassembling them in my own version." } }
+  ]
+};
+
+/* =====================================================
+   TERJEMAHAN UI
+   ===================================================== */
+const I18N = {
+  id: {
+    nav_home:"Beranda", nav_about:"Tentang", nav_skills:"Keahlian", nav_projects:"Proyek", nav_journey:"Perjalanan", nav_contact:"Kontak",
+    hero_eyebrow:"// halo, saya", hero_iam:"Saya seorang",
+    hero_lead:"Siswa Teknik Komputer dan Jaringan yang suka membangun sesuatu dari nol — mulai dari konfigurasi sistem Linux, pemrograman plugin, sampai video sinematik dari udara.",
+    btn_contact:"Hubungi saya", btn_projects:"Lihat proyek", btn_pdf:"Simpan PDF", btn_vcard:"Simpan kontak",
+    photo_hint:"Klik untuk ganti foto", photo_note:"Foto hanya tersimpan di browser ini.", photo_remove:"Hapus",
+    about_title:"Tentang saya",
+    about_p1:"Saya Haris Abdul Ajis, biasa dipanggil Ais. Saat ini saya menempuh pendidikan di jurusan Teknik Komputer dan Jaringan (TKJ) SMKN 1 Rancaekek.",
+    about_p2:"Di luar kelas, saya mengerjakan proyek sendiri: menulis plugin untuk server Minecraft, mengutak-atik Linux dan Docker, serta membuat video sinematik dengan drone. Saya lebih nyaman bekerja tenang dan fokus, dan terbiasa menyelesaikan masalah dengan mencoba, membaca log, lalu memperbaikinya.",
+    stat_projects:"Proyek", stat_skills:"Keahlian", stat_fields:"Bidang",
+    f_name:"Nama", f_nick:"Panggilan", f_school:"Sekolah", f_major:"Jurusan", f_loc:"Domisili", f_time:"Waktu setempat",
+    skills_title:"Keahlian", skills_note:"Persentase adalah perkiraan tingkat kenyamanan saya saat ini, bukan sertifikasi.",
+    tab_all:"Semua", cat_net:"Jaringan & Sistem", cat_code:"Pemrograman", cat_media:"Kreatif",
+    proj_title:"Proyek", proj_search:"Cari proyek…", proj_empty:"Tidak ada proyek yang cocok.",
+    journey_title:"Perjalanan", int_title:"Minat & kreativitas",
+    contact_title:"Kontak",
+    contact_lead:"Terbuka untuk magang (PKL), kolaborasi proyek, atau sekadar diskusi teknis. Pesan lewat formulir akan dikirim lewat WhatsApp atau email.",
+    copy:"Salin", open:"Buka", form_name:"Nama", form_mail:"Email Anda", form_msg:"Pesan",
+    err_name:"Nama wajib diisi.", err_mail:"Email belum valid.", err_msg:"Pesan minimal 10 karakter.",
+    send_wa:"Kirim via WhatsApp", send_mail:"Kirim via email", foot_keys:"pintasan keyboard",
+    help_title:"Pintasan keyboard", k_theme:"Ganti tema", k_lang:"Ganti bahasa", k_print:"Cetak / simpan PDF", k_search:"Cari proyek", k_close:"Tutup jendela",
+    t_copied:"Tersalin ke clipboard", t_vcard:"Kontak diunduh", t_photo:"Foto diperbarui", t_photo_rm:"Foto dihapus",
+    t_badimg:"File harus berupa gambar", t_bigimg:"Ukuran foto maksimal 4 MB", t_fix:"Periksa kembali isian formulir"
+  },
+  en: {
+    nav_home:"Home", nav_about:"About", nav_skills:"Skills", nav_projects:"Projects", nav_journey:"Journey", nav_contact:"Contact",
+    hero_eyebrow:"// hello, I'm", hero_iam:"I'm a",
+    hero_lead:"An IT networking student who likes building things from scratch — from Linux system setup and plugin programming to cinematic aerial video.",
+    btn_contact:"Get in touch", btn_projects:"View projects", btn_pdf:"Save as PDF", btn_vcard:"Save contact",
+    photo_hint:"Click to change photo", photo_note:"Photo is stored in this browser only.", photo_remove:"Remove",
+    about_title:"About me",
+    about_p1:"I'm Haris Abdul Ajis, called Ais. I'm currently studying Computer and Network Engineering (TKJ) at SMKN 1 Rancaekek.",
+    about_p2:"Outside class I work on my own projects: writing plugins for a Minecraft server, tinkering with Linux and Docker, and making cinematic videos with a drone. I prefer working quietly and focused, and I solve problems by trying, reading logs, and fixing.",
+    stat_projects:"Projects", stat_skills:"Skills", stat_fields:"Fields",
+    f_name:"Name", f_nick:"Nickname", f_school:"School", f_major:"Major", f_loc:"Location", f_time:"Local time",
+    skills_title:"Skills", skills_note:"Percentages are my own estimate of current comfort level, not certifications.",
+    tab_all:"All", cat_net:"Network & Systems", cat_code:"Programming", cat_media:"Creative",
+    proj_title:"Projects", proj_search:"Search projects…", proj_empty:"No matching projects.",
+    journey_title:"Journey", int_title:"Interests & creativity",
+    contact_title:"Contact",
+    contact_lead:"Open to internships, project collaboration, or just a technical chat. Messages from the form go out via WhatsApp or email.",
+    copy:"Copy", open:"Open", form_name:"Name", form_mail:"Your email", form_msg:"Message",
+    err_name:"Name is required.", err_mail:"Email looks invalid.", err_msg:"Message needs at least 10 characters.",
+    send_wa:"Send via WhatsApp", send_mail:"Send via email", foot_keys:"keyboard shortcuts",
+    help_title:"Keyboard shortcuts", k_theme:"Toggle theme", k_lang:"Toggle language", k_print:"Print / save PDF", k_search:"Search projects", k_close:"Close dialog",
+    t_copied:"Copied to clipboard", t_vcard:"Contact downloaded", t_photo:"Photo updated", t_photo_rm:"Photo removed",
+    t_badimg:"File must be an image", t_bigimg:"Photo must be under 4 MB", t_fix:"Please check the form fields"
+  }
+};
+
+/* =====================================================
+   UTIL
+   ===================================================== */
+const $  = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+const store = {
+  get(k, d){ try { const v = localStorage.getItem(k); return v === null ? d : v; } catch { return d; } },
+  set(k, v){ try { localStorage.setItem(k, v); } catch {} },
+  del(k){ try { localStorage.removeItem(k); } catch {} }
+};
+const state = { lang: store.get("lang", "id"), theme: store.get("theme", ""), skillCat: "all", projCat: "all", q: "" };
+const tr  = o => (typeof o === "string" ? o : o[state.lang]);
+const t   = k => I18N[state.lang][k] || k;
+const esc = s => String(s).replace(/[&<>"']/g, c => ({ "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#39;" }[c]));
+
+let toastTimer;
+function toast(msg){
+  const el = $("#toast");
+  el.textContent = msg; el.classList.add("show");
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => el.classList.remove("show"), 2200);
+}
+
+/* =====================================================
+   TEMA
+   ===================================================== */
+function applyTheme(){
+  const dark = state.theme ? state.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+  document.documentElement.dataset.theme = dark ? "dark" : "light";
+  $('meta[name="theme-color"]').content = dark ? "#121715" : "#2f6f5e";
+  $("#themeBtn").textContent = dark ? "☀" : "◐";
+}
+function toggleTheme(){
+  const dark = document.documentElement.dataset.theme === "dark";
+  state.theme = dark ? "light" : "dark";
+  store.set("theme", state.theme);
+  applyTheme();
+}
+
+/* =====================================================
+   BAHASA
+   ===================================================== */
+function applyLang(){
+  document.documentElement.lang = state.lang;
+  $("#langBtn").textContent = state.lang.toUpperCase();
+  $$("[data-i18n]").forEach(el => { el.textContent = t(el.dataset.i18n); });
+  $$("[data-i18n-ph]").forEach(el => { el.placeholder = t(el.dataset.i18nPh); });
+  renderTabs(); renderSkills(); renderProjects(); renderTimeline(); renderInterests();
+  restartTyping();
+  observeNew();
+}
+function toggleLang(){
+  state.lang = state.lang === "id" ? "en" : "id";
+  store.set("lang", state.lang);
+  applyLang();
+}
+
+/* =====================================================
+   RENDER
+   ===================================================== */
+const CATS = ["all", "net", "code", "media"];
+function tabLabel(c){ return c === "all" ? t("tab_all") : t("cat_" + c); }
+
+function renderTabs(){
+  const mk = (id, key) => {
+    $(id).innerHTML = CATS.map(c =>
+      `<button class="tab ${state[key] === c ? "on" : ""}" data-cat="${c}">${esc(tabLabel(c))}</button>`).join("");
+  };
+  mk("#skillTabs", "skillCat");
+  mk("#projTabs", "projCat");
+}
+
+function renderSkills(animate = false){
+  const box = $("#skillList");
+  box.innerHTML = CV.skills.map(s => `
+    <div class="skill ${state.skillCat !== "all" && s.cat !== state.skillCat ? "hide" : ""}" data-cat="${s.cat}">
+      <div class="row"><span>${esc(tr(s.n))}</span><span>${s.v}%</span></div>
+      <div class="bar"><i style="--w:${s.v}%" data-w="${s.v}"></i></div>
+    </div>`).join("");
+  $("#chips").innerHTML = CV.chips.map(c => `<span class="chip">${esc(c)}</span>`).join("");
+  requestAnimationFrame(() => requestAnimationFrame(fillBars));
+}
+function fillBars(){
+  $$("#skillList .skill:not(.hide) .bar i").forEach(b => { b.style.width = b.dataset.w + "%"; });
+}
+
+function renderProjects(){
+  const q = state.q.trim().toLowerCase();
+  const list = CV.projects.map((p, i) => ({ p, i })).filter(({ p }) => {
+    if (state.projCat !== "all" && p.cat !== state.projCat) return false;
+    if (!q) return true;
+    return (tr(p.t) + " " + tr(p.d) + " " + p.tags.join(" ")).toLowerCase().includes(q);
+  });
+  $("#projList").innerHTML = list.length ? list.map(({ p, i }) => `
+    <button class="proj" data-i="${i}">
+      <span class="cat">${esc(t("cat_" + p.cat))}</span>
+      <h3>${esc(tr(p.t))}</h3>
+      <p>${esc(tr(p.d))}</p>
+      <div class="tags">${p.tags.map(x => `<span class="tag">${esc(x)}</span>`).join("")}</div>
+    </button>`).join("") : `<p class="empty">${esc(t("proj_empty"))}</p>`;
+}
+
+function renderTimeline(){
+  $("#timeline").innerHTML = CV.timeline.map(x => `
+    <div class="t-item"><time>${esc(tr(x.time))}</time><h3>${esc(tr(x.t))}</h3><p>${esc(tr(x.d))}</p></div>`).join("");
+}
+function renderInterests(){
+  $("#interests").innerHTML = CV.interests.map(x => `
+    <div class="interest"><h3>${esc(tr(x.t))}</h3><p>${esc(tr(x.d))}</p></div>`).join("");
+}
+
+/* =====================================================
+   EFEK KETIK
+   ===================================================== */
+let typeTimer, typeIdx = 0, charIdx = 0, deleting = false;
+function restartTyping(){
+  clearTimeout(typeTimer); typeIdx = 0; charIdx = 0; deleting = false; $("#typed").textContent = ""; typeLoop();
+}
+function typeLoop(){
+  const words = CV.roles[state.lang], w = words[typeIdx % words.length], el = $("#typed");
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches){ el.textContent = words[0]; return; }
+  charIdx += deleting ? -1 : 1;
+  el.textContent = w.slice(0, charIdx);
+  let delay = deleting ? 35 : 75;
+  if (!deleting && charIdx === w.length){ deleting = true; delay = 1600; }
+  else if (deleting && charIdx === 0){ deleting = false; typeIdx++; delay = 350; }
+  typeTimer = setTimeout(typeLoop, delay);
+}
+
+/* =====================================================
+   SCROLL: progress, header, scrollspy, reveal, counter
+   ===================================================== */
+const sections = ["home", "about", "skills", "projects", "journey", "contact"];
+function onScroll(){
+  const h = document.documentElement;
+  const max = h.scrollHeight - h.clientHeight;
+  $("#progress").style.width = (max > 0 ? (h.scrollTop / max) * 100 : 0) + "%";
+  $("#top").classList.toggle("scrolled", h.scrollTop > 8);
+  $("#toTop").classList.toggle("show", h.scrollTop > 500);
+  let cur = sections[0];
+  for (const id of sections){
+    const el = document.getElementById(id);
+    if (el && el.getBoundingClientRect().top <= 120) cur = id;
+  }
+  $$("#menu a").forEach(a => a.classList.toggle("active", a.getAttribute("href") === "#" + cur));
+}
+
+let revealIO;
+function observeNew(){
+  if (!revealIO){
+    revealIO = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        e.target.classList.add("in");
+        $$("[data-count]", e.target).forEach(runCounter);
+        revealIO.unobserve(e.target);
+      });
+    }, { threshold: .12 });
+  }
+  $$(".rv:not(.in)").forEach(el => revealIO.observe(el));
+}
+function runCounter(el){
+  if (el.dataset.done) return; el.dataset.done = 1;
+  const target = +el.dataset.count, dur = 900, t0 = performance.now();
+  (function step(now){
+    const p = Math.min((now - t0) / dur, 1);
+    el.textContent = Math.round(target * (1 - Math.pow(1 - p, 3)));
+    if (p < 1) requestAnimationFrame(step);
+  })(t0);
+}
+
+/* =====================================================
+   FOTO PROFIL (disimpan lokal di browser)
+   ===================================================== */
+function showPhoto(src){
+  const img = $("#photoImg");
+  if (src){ img.src = src; img.hidden = false; $("#photoPh").hidden = true; $("#photoRemove").hidden = false; }
+  else { img.removeAttribute("src"); img.hidden = true; $("#photoPh").hidden = false; $("#photoRemove").hidden = true; }
+}
+function initPhoto(){
+  showPhoto(store.get("photo", ""));
+  const input = $("#photoInput");
+  $("#photo").addEventListener("click", () => input.click());
+  $("#photo").addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " "){ e.preventDefault(); input.click(); } });
+  input.addEventListener("change", () => {
+    const f = input.files[0]; if (!f) return;
+    if (!f.type.startsWith("image/")) return toast(t("t_badimg"));
+    if (f.size > 4 * 1024 * 1024) return toast(t("t_bigimg"));
+    const r = new FileReader();
+    r.onload = () => {
+      // perkecil agar muat di localStorage
+      const im = new Image();
+      im.onload = () => {
+        const s = Math.min(1, 640 / Math.max(im.width, im.height));
+        const c = document.createElement("canvas");
+        c.width = Math.round(im.width * s); c.height = Math.round(im.height * s);
+        c.getContext("2d").drawImage(im, 0, 0, c.width, c.height);
+        const data = c.toDataURL("image/jpeg", .85);
+        store.set("photo", data); showPhoto(data); toast(t("t_photo"));
+      };
+      im.src = r.result;
+    };
+    r.readAsDataURL(f); input.value = "";
+  });
+  $("#photoRemove").addEventListener("click", () => { store.del("photo"); showPhoto(""); toast(t("t_photo_rm")); });
+}
+
+/* =====================================================
+   MODAL
+   ===================================================== */
+let lastFocus;
+function openModal(id){
+  const m = $(id); lastFocus = document.activeElement;
+  m.classList.add("open"); m.setAttribute("aria-hidden", "false");
+  const btn = $("[data-close]", m); btn && btn.focus();
+}
+function closeModals(){
+  $$(".modal.open").forEach(m => { m.classList.remove("open"); m.setAttribute("aria-hidden", "true"); });
+  if (lastFocus && lastFocus.focus) lastFocus.focus();
+}
+function openProject(i){
+  const p = CV.projects[i];
+  $("#mCat").textContent = t("cat_" + p.cat);
+  $("#mTitle").textContent = tr(p.t);
+  $("#mDesc").textContent = tr(p.d);
+  $("#mPoints").innerHTML = (p.p[state.lang] || []).map(x => `<li>${esc(x)}</li>`).join("");
+  $("#mTags").innerHTML = p.tags.map(x => `<span class="tag">${esc(x)}</span>`).join("");
+  openModal("#projModal");
+}
+
+/* =====================================================
+   KONTAK
+   ===================================================== */
+function initContact(){
+  $("#emailTxt").textContent = CV.email;
+  $("#waTxt").textContent = "+" + CV.wa;
+  $("#ghTxt").textContent = CV.github.replace(/^https?:\/\//, "");
+  $("#ghLink").href = CV.github;
+
+  $$("[data-copy]").forEach(b => b.addEventListener("click", async () => {
+    const val = b.dataset.copy === "email" ? CV.email : "+" + CV.wa;
+    try { await navigator.clipboard.writeText(val); }
+    catch {
+      const ta = document.createElement("textarea"); ta.value = val; document.body.appendChild(ta);
+      ta.select(); try { document.execCommand("copy"); } catch {} ta.remove();
+    }
+    toast(t("t_copied"));
+  }));
+
+  const msg = $("#fMsg");
+  msg.addEventListener("input", () => { $("#cnt").textContent = msg.value.length; });
+
+  function validate(){
+    const name = $("#fName"), mail = $("#fMail");
+    const checks = [
+      [name, name.value.trim().length >= 2],
+      [mail, /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(mail.value.trim())],
+      [msg,  msg.value.trim().length >= 10]
+    ];
+    let ok = true;
+    checks.forEach(([el, good]) => { el.closest(".field").classList.toggle("bad", !good); if (!good) ok = false; });
+    if (!ok) toast(t("t_fix"));
+    return ok;
+  }
+  const compose = () => `${msg.value.trim()}\n\n— ${$("#fName").value.trim()} (${$("#fMail").value.trim()})`;
+
+  $("#form").addEventListener("submit", e => {
+    e.preventDefault(); if (!validate()) return;
+    window.open(`https://wa.me/${CV.wa}?text=${encodeURIComponent(compose())}`, "_blank", "noopener");
+  });
+  $("#mailBtn").addEventListener("click", () => {
+    if (!validate()) return;
+    const subject = `Pesan untuk ${CV.name}`;
+    location.href = `mailto:${CV.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(compose())}`;
+  });
+  $$("#form input, #form textarea").forEach(el => el.addEventListener("input", () => el.closest(".field").classList.remove("bad")));
+}
+
+/* vCard */
+function downloadVCard(){
+  const v = ["BEGIN:VCARD", "VERSION:3.0", "N:Ajis;Haris Abdul;;;", `FN:${CV.name}`,
+    "ORG:SMKN 1 Rancaekek", "TITLE:Siswa TKJ", `EMAIL;TYPE=INTERNET:${CV.email}`, `TEL;TYPE=CELL:+${CV.wa}`, `URL:${CV.github}`, "END:VCARD"].join("\r\n");
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(new Blob([v], { type: "text/vcard" }));
+  a.download = "haris-abdul-ajis.vcf"; document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+  toast(t("t_vcard"));
+}
+
+/* jam WIB */
+function tickClock(){
+  const f = new Intl.DateTimeFormat(state.lang === "id" ? "id-ID" : "en-GB",
+    { timeZone: "Asia/Jakarta", hour: "2-digit", minute: "2-digit", hour12: false });
+  $("#clock").textContent = f.format(new Date()).replace(".", ":") + " WIB";
+}
+
+/* =====================================================
+   EVENT
+   ===================================================== */
+function bind(){
+  $("#themeBtn").addEventListener("click", toggleTheme);
+  $("#langBtn").addEventListener("click", toggleLang);
+  $("#printBtn").addEventListener("click", () => window.print());
+  $("#vcardBtn").addEventListener("click", downloadVCard);
+  $("#helpBtn").addEventListener("click", () => openModal("#helpModal"));
+  $("#toTop").addEventListener("click", () => scrollTo({ top: 0, behavior: "smooth" }));
+
+  // menu mobile
+  const burger = $("#burger"), menu = $("#menu");
+  burger.addEventListener("click", () => {
+    const o = menu.classList.toggle("open"); burger.setAttribute("aria-expanded", o);
+  });
+  menu.addEventListener("click", e => { if (e.target.closest("a")) { menu.classList.remove("open"); burger.setAttribute("aria-expanded", false); } });
+
+  // tab skill & proyek
+  $("#skillTabs").addEventListener("click", e => {
+    const b = e.target.closest(".tab"); if (!b) return;
+    state.skillCat = b.dataset.cat; renderTabs();
+    $$("#skillList .skill").forEach(s => s.classList.toggle("hide", state.skillCat !== "all" && s.dataset.cat !== state.skillCat));
+    $$("#skillList .bar i").forEach(i => { i.style.width = "0"; });
+    requestAnimationFrame(() => requestAnimationFrame(fillBars));
+  });
+  $("#projTabs").addEventListener("click", e => {
+    const b = e.target.closest(".tab"); if (!b) return;
+    state.projCat = b.dataset.cat; renderTabs(); renderProjects();
+  });
+  $("#projSearch").addEventListener("input", e => { state.q = e.target.value; renderProjects(); });
+  $("#projList").addEventListener("click", e => {
+    const c = e.target.closest(".proj"); if (c) openProject(+c.dataset.i);
+  });
+
+  // modal
+  $$(".modal").forEach(m => m.addEventListener("click", e => { if (e.target === m || e.target.closest("[data-close]")) closeModals(); }));
+
+  // keyboard
+  document.addEventListener("keydown", e => {
+    if (e.key === "Escape") return closeModals();
+    const typing = /^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement.tagName);
+    if (typing || e.ctrlKey || e.metaKey || e.altKey) return;
+    const k = e.key.toLowerCase();
+    if (k === "t") toggleTheme();
+    else if (k === "l") toggleLang();
+    else if (k === "p") window.print();
+    else if (k === "/"){ e.preventDefault(); location.hash = "#projects"; setTimeout(() => $("#projSearch").focus(), 350); }
+    else if (e.key === "?") openModal("#helpModal");
+  });
+
+  addEventListener("scroll", onScroll, { passive: true });
+  addEventListener("resize", onScroll);
+  matchMedia("(prefers-color-scheme: dark)").addEventListener?.("change", () => { if (!state.theme) applyTheme(); });
+}
+
+/* =====================================================
+   MULAI
+   ===================================================== */
+document.addEventListener("DOMContentLoaded", () => {
+  $("#year").textContent = new Date().getFullYear();
+  applyTheme();
+  bind();
+  initPhoto();
+  initContact();
+  applyLang();
+  tickClock(); setInterval(tickClock, 30000);
+  onScroll();
+});
+</script>
+</body>
+</html>
